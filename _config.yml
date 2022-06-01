@@ -11,13 +11,13 @@ theme_version: 1.0.1
 title: Unf*ck The Earth
 email: blog@unfuckthe.earth
 description: >- # this means to ignore newlines until "baseurl:"
-  I'm a software engineer that want to do more to help save the climate, but I don't knwo how.
-  This blog documents my journey in search of a way to get involved.
+  I'm a software engineer that wants to do more to help in the effort to decarbonise both our society and climate, but I don't know where to begin.
+  This blog documents my journey in search of an answer to that question.
 author:
   Gidi Meir Morris
 baseurl:            '' # The subpath of your site, e.g. /blog
 url:                'https://www.unfuckthe.earth' # The base hostname & protocol for your site
-twitter:            https://twitter.com/chekofif
+twitter:            'https://twitter.com/chekofif'
 
 markdown:  kramdown
 permalink: pretty

@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "How can I help?"
-categories: [Gidi]
+title:  "How can I contribute?"
+categories: []
 tags: []
 icon: seedling
-description: "How can I help?"
+description: "How can I contribute?"
 ---
 
 Several months before the pandemic threw everything into chaos, [I made the following observation](https://gidi.io/tech-ethics/2019/05/08/tech-civilisations-circle-of-influence/):
