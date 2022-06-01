@@ -1,0 +1,19 @@
+<li class="c-nav__item">
+  <a href="{{ site.baseurl }}/" class="c-nav__link">Home</a>
+</li>
+
+{% for page in site.pages %} {% unless page.name == '404.md' %} {% if page.title
+%}
+<li class="c-nav__item">
+  <a href="{{ page.url | prepend: site.baseurl }}" class="c-nav__link"
+    >{{ page.title }}</a
+  >
+</li>
+{% endif %} {% endunless %} {% endfor %}
+
+<li class="c-nav__item">
+  <a href="https://www.gidi.io" class="c-nav__link"
+    ><i class="fa-light fa-message"></i> Thoughts on Engineering</a
+  >
+</li>
+

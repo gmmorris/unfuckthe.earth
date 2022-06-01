@@ -1,0 +1,71 @@
+<header class="c-header">
+  <div id="hero-container">
+    <video class="hero" playsinline autoplay muted loop>
+      <source src="{{ site.url }}/videos/production ID_3784399.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="o-grid c-header__inner">
+    <div class="o-grid__col o-grid__col--2-4-s o-grid__col--2-4-l">
+      <div class="c-logo">
+        {% if site.logo %}
+        <a href="{{ site.baseurl }}/">
+          <img
+            class="c-logo__img"
+            src="{{ site.logo }}"
+            alt="{{ site.title }}"
+          />
+        </a>
+        {% else %}
+        <h1>
+          <a class="c-logo__link" href="{{ site.baseurl }}/"
+            >{{ site.title }}</a
+          >
+        </h1>
+        {% endif %}
+      </div>
+    </div>
+
+    <div
+      class="o-grid__col o-grid__col--2-4-s o-grid__col--2-4-l _o-grid__col--full"
+    >
+      <div class="c-off-canvas-content js-off-canvas-content">
+        <div
+          class="js-off-canvas-toggle c-off-canvas-toggle c-off-canvas-toggle--close"
+        >
+          <span class="c-off-canvas-toggle__icon"></span>
+        </div>
+
+        <div class="o-grid">
+          <div
+            class="o-grid__col o-grid__col--4-4-s o-grid__col--3-4-l o-grid__col--full"
+          >
+            <nav class="c-nav-wrap">
+              <ul class="c-nav o-plain-list">
+                {% include navigation.html %}
+                <li class="c-nav__item">
+                  <a
+                    class="toggle-search-button js-search-toggle"
+                    href="#"
+                    aria-label="Search"
+                  >
+                    <span
+                      class="c-nav__icon"
+                      data-icon="ei-search"
+                      data-size="s"
+                    ></span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="js-off-canvas-toggle c-off-canvas-toggle">
+        <span class="c-off-canvas-toggle__icon"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% include search-form.html %}

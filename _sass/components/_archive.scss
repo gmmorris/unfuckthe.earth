@@ -1,0 +1,20 @@
+/*------------------------------------*\
+  Components > Archive
+\*------------------------------------*/
+
+.c-archive {
+  text-align: center;
+  padding: double($base-spacing-unit) 0;
+  margin-bottom: double($base-spacing-unit);
+
+  &__title {
+    margin-bottom: 0;
+    font-size: $font-size-h2;
+  }
+
+  &__description {
+    margin-top: half($base-spacing-unit);
+    margin-bottom: 0;
+    font-size: $font-size-small;
+  }
+}

@@ -1,0 +1,10 @@
+/*------------------------------------*\
+  Elements > hr
+\*------------------------------------*/
+
+hr {
+  height: 1px;
+  border: 0;
+  background-color: $color-border;
+  margin: (double($base-spacing-unit) + half($base-spacing-unit)) 0;
+}

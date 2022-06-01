@@ -1,0 +1,30 @@
+<div class="c-post-pagination">
+  <div class='o-grid'>
+    <div class='o-grid__col o-grid__col--2-4-l c-post-pagination__prev'>    
+      {% if page.previous %}
+        <a href="{{ page.previous.url | relative_url }}">
+          <i class="fas fa-angle-left"></i>
+          <span>{{ page.previous.title | markdownify | strip_html }}</span>
+        </a>
+      {% else %}
+        <a href="{{ "/" | relative_url }}">
+          <i class="fas fa-angle-left"></i>
+          <span>What Else Have You Written About?</span>
+        </a>
+      {% endif %}
+    </div>
+    <div class='o-grid__col o-grid__col--2-4-l c-post-pagination__next'>
+      {% if page.next %}
+        <a href="{{ page.next.url | relative_url }}">
+          <span>{{ page.next.title | markdownify | strip_html }}</span>
+          <i class="fa fa-angle-right"></i>
+        </a>
+        {% else %}
+          <a href="{{ "/" | relative_url }}">
+            <span>What Else Have You Written About?</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        {% endif %}
+    </div>
+  </div>
+</div>

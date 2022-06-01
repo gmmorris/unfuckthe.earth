@@ -1,0 +1,90 @@
+/*------------------------------------*\
+  Components > Teaser
+\*------------------------------------*/
+
+.c-teaser-wrapper:not(:last-child) {
+  @include mq($until: desktop) {
+    margin-bottom: (double($base-spacing-unit) + half($base-spacing-unit));
+  }
+}
+
+.c-teaser {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  padding-top: double($base-spacing-unit);
+
+  &:not(:last-child) {
+    padding-bottom: double($base-spacing-unit);
+    border-bottom: 1px solid $color-border;
+  }
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  &__media {
+    margin-left: $base-spacing-unit;
+    background-color: $bg-gray;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__image {
+    display: block;
+    width: quadruple($base-spacing-unit) + $base-spacing-unit;
+    height: triple($base-spacing-unit) + $base-spacing-unit;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $bg-gray;
+    border-radius: $global-border-radius;
+    transition: all $global-transition ease-in-out;
+    box-shadow: quarter($base-spacing-unit) quarter($base-spacing-unit) 0 $bg-gray;
+
+    .js-enabled &.js-fadein {
+      opacity: 0;
+    }
+
+    .js-enabled &.is-inview {
+      opacity: 1;
+    }
+
+    @include mq($from: desktop) {
+      width: quadruple($base-spacing-unit) + double($base-spacing-unit);
+      height: triple($base-spacing-unit) + double($base-spacing-unit);
+    }
+  }
+
+  &__title {
+    display: inline;
+    font-size: $font-size-medium;
+    font-family: $font-serif;
+    font-weight: $font-weight-regular;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom $global-transition ease-in-out;
+  }
+
+  &__date {
+    display: block;
+    line-height: 1;
+    font-size: $font-size-tiny;
+    color: $color-gray;
+    text-transform: uppercase;
+    letter-spacing: $global-letter-spacing;
+    margin-top: half($base-spacing-unit);
+  }
+
+  @include attention() {
+    .c-teaser__image {
+      transform: scale(1.01);
+    }
+
+    .c-teaser__title {
+      color: $color-text;
+      border-bottom: 1px solid $color-brand;
+    }
+  }
+}

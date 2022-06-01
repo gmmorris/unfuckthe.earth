@@ -1,0 +1,18 @@
+/*------------------------------------*\
+  Components > title bar
+\*------------------------------------*/
+
+.c-title-bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: $base-spacing-unit;
+  margin-bottom: double($base-spacing-unit);
+  border-bottom: 1px solid $color-border;
+
+  &__title {
+    line-height: 1;
+    margin-bottom: 0;
+    font-weight: $font-weight-medium;
+  }
+}

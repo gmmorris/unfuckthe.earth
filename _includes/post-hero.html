@@ -1,0 +1,49 @@
+<div class="c-post-hero">
+  <div class="o-grid">
+    <div
+      class="o-grid__col o-grid__col--4-4-s {% if page.image %} o-grid__col--2-4-l {% endif %} {% unless page.image %} o-grid__col--2-3-m o-grid__col--center {% endunless %}"
+    >
+      <div
+        class="c-post-hero__content {% unless page.image %} c-post-hero__content--no-image {% endunless %}"
+      >
+        <div class="c-post-hero__categories">
+          {% for category in page.categories limit:1 %}
+          <a href="{{ site.baseurl }}/categories#{{ category }}"
+            >{{ category | replace: "-", " " }}</a
+          >{% endfor %}
+        </div>
+        <h1 class="c-post-hero__title">{{ page.title }}</h1>
+        <div class="c-post-hero__tags">
+          {% for tag in page.tags %}
+          <a href="{{ site.baseurl }}/tags#{{ tag }}"
+            >{{ tag | replace: "-", " " }}{{loop.index}}</a
+          >{% if forloop.last == true %}{% else %},{% endif %} {% endfor %}
+        </div>
+        <div class="c-post-hero__meta">
+          <time datetime="{{ page.date | date: '%d %b %Y' }}"
+            >{{ page.date | date: '%d %b %Y' }}</time
+          >
+        </div>
+      </div>
+    </div>
+
+    {% if page.image %}
+    <div class="o-grid__col o-grid__col--4-4-s o-grid__col--2-4-l">
+      <div class="c-post-hero__media">
+        <a
+          target="_blank"
+          rel="noopener"
+          href="{{ page.image-desc-link }}"
+          title="{{ page.image-desc }}"
+        >
+          <img
+            class="c-post-hero__image js-fadein"
+            src="{{ page.image | prepend: site.baseurl }}"
+            alt="{{ page.image-desc }}"
+          />
+        </a>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>

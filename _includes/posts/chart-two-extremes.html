@@ -1,0 +1,142 @@
+<div class="chart-container">
+  <canvas id="chart-two-extremes" class="in-article-chart" width="80%"></canvas>
+</div>
+<script lang="javascript">
+  window._charts = window._charts || [];
+  window._charts.push({
+      selector: '#chart-two-extremes',
+      chart: {
+      type: 'bubble',
+      data: {
+          labels: "Organisational Patterns",
+          datasets: [
+          {
+              label: ["Localised XP team"],
+              backgroundColor: "#55a630",
+              borderColor: "#007f5f",
+              data: [{
+              x: 0.5,
+              y: 0.5,
+              r: 16
+              }]
+          }, {
+              label: ["Remote XP team"],
+              backgroundColor: "#d9ed92",
+              borderColor: "#b5e48c",
+              data: [{
+              x: 1,
+              y: 1,
+              r: 5
+              }]
+          }, {
+              label: ["Localised Scrum team"],
+              backgroundColor: "#ddbdfc",
+              borderColor: "#8e94f2",
+              data: [{
+              x: 1.5,
+              y: 2,
+              r: 5
+              }]
+          }, {
+              label: ["Remote Scrum team"],
+              backgroundColor: "#86bbd8",
+              borderColor: "#33658a",
+              data: [{
+              x: 2,
+              y: 3,
+              r: 5
+              }]
+          }, {
+              label: ["Globally Distributed team"],
+              backgroundColor: "#8d9db6",
+              borderColor: "#667292",
+              data: [{
+              x: 3.5,
+              y: 3.5,
+              r: 16
+              }]
+          }
+          ]
+      },
+      options: {
+        tooltips: {
+            callbacks: {
+                label: function(tooltipItem, data) {
+                    return data.datasets[tooltipItem.datasetIndex].label || '';
+                }
+            }
+        },
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'bottom',
+                labels: {
+                    padding: 25,
+                    fontStyle: '"Jost*",Helvetica,Arial,sans-serif'
+                }
+            },
+            hover: {
+                mode: 'label'
+            },
+          title: {
+          display: true,
+          text: 'Organisational Patterns by ratio of Synchronisation to Collocation'
+          }, scales: {
+          yAxes: [{
+              scaleLabel: {
+              display: true,
+              labelString: "Synchronisation"
+              },
+              ticks: {
+                  min: 0,
+                  max: 4,
+                  stepSize: 1,
+                  suggestedMin: 0,
+                  suggestedMax: 4,
+                  callback: function(label, index, labels) {
+                      switch (index) {
+                        case 0:
+                            return 'Async';
+                            break;
+                        case 4:
+                            return 'Sync';
+                            break;
+                        default:
+                            return '';
+                      }
+                  }
+              }
+          }],
+          xAxes: [{
+              scaleLabel: {
+              display: true,
+              labelString: "Localisation"
+              },
+              ticks: {
+                  min: 0,
+                  max: 4,
+                  stepSize: 1,
+                  suggestedMin: 0,
+                  suggestedMax: 4,
+                  callback: function(label, index, labels) {
+                      switch (index) {
+                        case 0:
+                            return 'Collocated';
+                            break;
+                        case 2:
+                            return 'Remote Friendly';
+                            break;
+                        case 4:
+                            return 'Distributed';
+                            break;
+                        default:
+                            return '';
+                      }
+                  }
+              }
+          }]
+          }
+      }
+      }
+  });
+</script>

@@ -1,0 +1,73 @@
+/*------------------------------------*\
+  Components > Widget Instagram
+\*------------------------------------*/
+
+.c-widget-instagram {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  &__item {
+    flex: 1 25%;
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: all $global-transition ease-in-out;
+
+    .js-enabled &.js-fadein {
+      opacity: 0;
+    }
+
+    .js-enabled &.is-inview {
+      opacity: 1;
+    }
+
+    &:before {
+      transition: $global-transition;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      content: '';
+      background-color: $color-black;
+      opacity: 0;
+    }
+
+    &:after {
+      display: block;
+      content: '';
+      width: 100%;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__me {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: quarter($base-spacing-unit);
+    font-size: $font-size-tiny;
+    letter-spacing: $global-letter-spacing;
+    background: $color-white;
+    border-radius: double($global-border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+
+    @include mq($from: tablet) {
+      padding: half($base-spacing-unit);
+    }
+
+    .icon {
+      margin-right: quarter($base-spacing-unit);
+    }
+  }
+}

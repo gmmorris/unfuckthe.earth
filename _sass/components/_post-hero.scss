@@ -1,0 +1,96 @@
+/*------------------------------------*\
+  Components > Post Hero
+\*------------------------------------*/
+
+.c-post-hero {
+  margin-bottom: $base-spacing-unit;
+
+  &__content {
+    @include mq($until: desktop) {
+      margin-bottom: $base-spacing-unit;
+    }
+
+    @include mq($from: desktop) {
+      padding: double($base-spacing-unit) double($base-spacing-unit) double($base-spacing-unit) 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    &--no-image {
+      padding-right: 0;
+      padding-bottom: 0;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  &__tags, &__categories {
+    color: $color-gray;
+    font-size: $font-size-tiny;
+    text-transform: capitalize;
+    letter-spacing: $global-letter-spacing;
+    padding: 1em 0em;
+
+    a {
+      color: $color-gray;
+
+      @include attention() {
+        color: $color-text;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+    font-size: $font-size-h3;
+    font-family: $font-sans-serif;
+    font-weight: $font-weight-regular;
+
+    @include mq($from: tablet) {
+      font-size: $font-size-h2;
+    }
+
+    @include mq($from: desktop) {
+      font-size: double($font-size-h2);
+      line-height: 1.2;
+    }
+  }
+
+  &__meta {
+    font-size: $font-size-tiny;
+    color: $color-gray;
+    letter-spacing: $global-letter-spacing;
+    padding: 1em 0em;
+  }
+
+  &__author a {
+    font-weight: $font-weight-medium;
+  }
+
+  &__media {
+    margin-right: $base-spacing-unit;
+  }
+
+  &__image {
+    margin: 0 auto;
+    border-radius: $global-border-radius;
+    // box-shadow: $base-spacing-unit $base-spacing-unit 0 $bg-gray;
+
+    @include mq($from: desktop) {
+      max-height: 80vh;
+      margin-left: auto;
+      margin-right: initial;
+    }
+
+    .js-enabled &.js-fadein {
+      opacity: 0;
+    }
+
+    .js-enabled &.is-inview {
+      opacity: 1;
+    }
+  }
+}

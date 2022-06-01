@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+{% include head.html %}
+
+<body class='{% if page.url == '/' %} is-home {% endif %}'>
+
+  {%- if jekyll.environment == 'production' -%}
+    {% include analytics.html %}
+  {%- endif -%}
+
+  <div class='js-off-canvas-container c-off-canvas-container'>
+    {% include header.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="{{ '/js/jquery.viewportchecker.min.js' | prepend: site.baseurl }}"> </script>
+  <script src="{{ '/js/jquery.ghostHunter.min.js' | prepend: site.baseurl }}">     </script>
+  <script src="{{ '/js/masonry.pkgd.min.js' | prepend: site.baseurl }}">           </script>
+  <script src="{{ '/js/imagesloaded.pkgd.min.js' | prepend: site.baseurl }}">      </script>
+  <script src="{{ '/js/evil-icons.min.js' | prepend: site.baseurl }}">             </script>
+  <script src="{{ '/js/jquery.fitvids.js' | prepend: site.baseurl }}">             </script>
+  <script src="{{ '/js/instafeed.min.js' | prepend: site.baseurl }}">              </script>
+  <script src="{{ '/js/transition.js' | prepend: site.baseurl }}">                 </script>
+  <script src="{{ '/js/zoom.min.js' | prepend: site.baseurl }}">                   </script>
+  <script src="{{ '/js/app.js' | prepend: site.baseurl }}">                        </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script src="https://kit.fontawesome.com/b06b0f8780.js" crossorigin="anonymous"></script>
+  <script src="{{ '/js/attach_charts.js' | prepend: site.baseurl }}">                        </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+/*------------------------------------*\
+  Elements > Blockquote
+\*------------------------------------*/
+
+blockquote {
+  font-size: $font-size-h3;
+  text-align: center;
+
+  &.inline {
+    
+    .fas {
+      color: #367715;
+      &.fa-quote-left {
+        float: left;
+        margin-right: 0.5em;
+      }
+      &.fa-quote-right {
+        float: right;
+        padding-top: 0.5em;
+      }
+    }
+
+    border-left: 2px dotted #367715;
+    font-size: 1em;
+    text-align: left;
+    padding-left: 2em;
+    margin: 0em 0em 2em -1em;
+
+    @include mq($from: tablet) {
+      min-width: 75vw;
+    }
+
+    @include mq($from: desktop) {
+      width: half($grid-width);
+      min-width: initial;
+    }
+  }
+
+  &:not(.inline) {
+    @include mq($from: tablet) {
+      min-width: 75vw;
+    }
+
+    @include mq($from: desktop) {
+      font-size: $font-size-h2;
+      min-width: half($grid-width) + quarter($grid-width);
+    }
+  }
+}

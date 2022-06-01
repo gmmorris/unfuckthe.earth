@@ -1,0 +1,111 @@
+/*------------------------------------*\
+  Components > Post Card
+\*------------------------------------*/
+
+.c-post-card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  // border-bottom: 1px solid $color-border;
+  margin-bottom: double($base-spacing-unit) + half($base-spacing-unit);
+  padding-bottom: (double($base-spacing-unit) + half($base-spacing-unit)) - half(quarter($base-spacing-unit));
+
+  &__media {
+    overflow: hidden;
+    background-color: $bg-gray;
+    border-radius: $global-border-radius;
+    margin-bottom: $base-spacing-unit + half($base-spacing-unit);
+  }
+
+  &__image-link {
+    display: block;
+    position: relative;
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+    border-radius: $global-border-radius;
+    transition: all $global-transition ease;
+
+    .js-enabled &.js-fadein {
+      opacity: 0;
+    }
+
+    .js-enabled &.is-inview {
+      opacity: 1;
+    }
+  }
+
+  &--featured {
+    &__icon {
+      position: absolute;
+      bottom: $base-spacing-unit;
+      left: $base-spacing-unit;
+      fill: $color-white;
+      background-color: rgba($color-black, .05);
+    }
+  }
+
+  &__content--no-image {
+    background-color: $bg-gray;
+    padding: double($base-spacing-unit) + half($base-spacing-unit);
+  }
+
+  &__meta {
+    line-height: 1;
+    font-size: $font-size-tiny;
+    color: $color-gray;
+    letter-spacing: $global-letter-spacing;
+    display: flex;
+    align-items: center;
+    margin-bottom: half($base-spacing-unit) + quarter($base-spacing-unit);
+  }
+
+  &__date {
+    margin-right: quarter($base-spacing-unit);
+  }
+
+  &__tags {
+    line-height: 1;
+    font-size: $font-size-tiny;
+    color: $color-gray;
+    letter-spacing: $global-letter-spacing;
+
+    a {
+      color: $color-gray;
+      text-transform: capitalize;
+      font-weight: $font-weight-regular;
+
+      @include attention() {
+        color: $color-text;
+      }
+    }
+  }
+
+  &__title {
+    clear: both;
+    margin-bottom: 0;
+    font-size: $font-size-base;
+    transition: $global-transition;
+    font-family: $font-serif;
+    font-weight: $font-weight-regular;
+  }
+
+  &__title-link {
+    border-bottom: 1px solid transparent;
+    transition: border-bottom $global-transition ease-in-out;
+  }
+
+  @include attention() {
+    .c-post-card__image {
+      transform: scale(1.01);
+    }
+
+    .c-post-card__title-link {
+      color: $color-text;
+      border-bottom: 1px solid $color-brand;
+    }
+  }
+}

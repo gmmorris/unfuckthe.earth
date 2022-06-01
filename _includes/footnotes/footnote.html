@@ -1,0 +1,11 @@
+{% assign footnotes = include.notes | newline_to_br | strip_newlines | split: "<br />"  %}
+
+{% assign note_counter = 0 %}
+<ol class="footnote fa-ul" id="footnote">
+    {% for footnote in footnotes %}
+        {% if footnote.size > 0 %}
+        {% assign note_counter = note_counter | plus: 1 %}
+        <li><span class="fa-li">{% for j in (1..note_counter) %}<i class="fas fa-asterisk"></i>{% endfor %}</span>{{ footnote | markdownify  }}</li>
+        {% endif %}
+    {% endfor %}
+</ol>

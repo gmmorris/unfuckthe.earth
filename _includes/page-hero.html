@@ -1,0 +1,25 @@
+<div class="c-post-hero">
+  <div class="o-grid">
+    <div
+      class="o-grid__col o-grid__col--4-4-s {% if page.image %} o-grid__col--2-4-l {% endif %} {% unless page.image %} o-grid__col--2-3-m o-grid__col--center {% endunless %}"
+    >
+      <div
+        class="c-post-hero__content {% unless page.image %} c-post-hero__content--no-image {% endunless %}"
+      >
+        <h1 class="c-post-hero__title">{{ page.title }}</h1>
+      </div>
+    </div>
+
+    {% if page.image %}
+    <div class="o-grid__col o-grid__col--4-4-s o-grid__col--2-4-l">
+      <div class="c-post-hero__media">
+        <img
+          class="c-post-hero__image js-fadein"
+          src="{{ page.image | prepend: site.baseurl }}"
+          alt="{{ page.title }}"
+        />
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+{% include post-pagination.html %}
+
+<!-- {% if page.image %}
+  <meta itemprop='og:image' content='{{ base_path }}{{ page.image }}'>
+{% endif %} -->
+
+{% include post-hero.html %}
+
+<div class='o-wrapper'>
+
+  <div class='o-grid'>
+    <div class='o-grid__col o-grid__col--center o-grid__col--2-3-m'>
+      <article class='c-post'>
+
+        <div class='c-content'>
+          {{ content }}
+        </div>
+
+        <div class='o-grid'>
+          <div class='o-grid__col o-grid__col--4-4-s'>
+              {% include share.html %}
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- {% include disqus.html %} -->
+
+      </article>
+
+    </div>
+  </div>
+
+</div>
