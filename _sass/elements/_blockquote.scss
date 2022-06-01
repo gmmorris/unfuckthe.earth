@@ -25,25 +25,37 @@ blockquote {
     text-align: left;
     padding-left: 2em;
     margin: 0em 0em 2em -1em;
-
-    @include mq($from: tablet) {
-      min-width: 75vw;
-    }
-
-    @include mq($from: desktop) {
-      width: half($grid-width);
-      min-width: initial;
-    }
   }
 
   &:not(.inline) {
-    @include mq($from: tablet) {
-      min-width: 75vw;
-    }
-
     @include mq($from: desktop) {
       font-size: $font-size-h2;
-      min-width: half($grid-width) + quarter($grid-width);
+    }
+  }
+}
+
+article {  
+  blockquote {
+  
+    &.inline {
+      @include mq($from: tablet) {
+        min-width: 75vw;
+      }
+  
+      @include mq($from: desktop) {
+        width: half($grid-width);
+        min-width: initial;
+      }
+    }
+  
+    &:not(.inline) {
+      @include mq($from: tablet) {
+        min-width: 75vw;
+      }
+  
+      @include mq($from: desktop) {
+        min-width: half($grid-width) + quarter($grid-width);
+      }
     }
   }
 }

@@ -77,8 +77,7 @@
   &__image {
     margin: 0 auto;
     border-radius: $global-border-radius;
-    // box-shadow: $base-spacing-unit $base-spacing-unit 0 $bg-gray;
-
+        
     @include mq($from: desktop) {
       max-height: 80vh;
       margin-left: auto;

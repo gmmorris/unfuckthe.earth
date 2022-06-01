@@ -29,6 +29,15 @@
           {{ post.title }}
         </a>
       </h2>
+      <div class="c-post-card__post-content">
+        {% if post.content contains '<!--more-->' %}
+        {{ post.content | split:'<!--more-->' | first }}
+        <p class="read-more"><a href="{{ site.baseurl }}{{ post.url }}" class="read-more-link">Continue reading &rarr;</a>
+        </p>
+        {% else %}
+        {{ post.content }}
+        {% endif %}
+      </div>
     </div>
   </div>
 
