@@ -3,7 +3,7 @@
 
 {% include head.html %}
 
-<body class='{% if page.url == '/' %} is-home {% endif %}'>
+<body class='{% if page.url == '/' %}is-home{% endif %}'>
 
   {%- if jekyll.environment == 'production' -%}
     {% include analytics.html %}
